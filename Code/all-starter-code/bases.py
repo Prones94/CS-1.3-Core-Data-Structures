@@ -21,7 +21,7 @@ def decode(digits, base):
     # TODO: Decode digits from hexadecimal (base 16)
     # TODO: Decode digits from any base (2 up to 36)
     # digits = int(digits)
-    #result = 0
+    # result = 0
     # exponent = 0
     if base == 2:
         '''
@@ -81,14 +81,14 @@ def convert(digits, base1, base2):
     # Handle up to base 36 [0-9a-z]
     assert 2 <= base1 <= 36, 'base1 is out of range: {}'.format(base1)
     assert 2 <= base2 <= 36, 'base2 is out of range: {}'.format(base2)
-    # TODO: Convert digits from base 2 to base 16 (and vice versa)
-    # ...
-    # TODO: Convert digits from base 2 to base 10 (and vice versa)
-    # ...
-    # TODO: Convert digits from base 10 to base 16 (and vice versa)
-    # ...
-    # TODO: Convert digits from any base to any base (2 up to 36)
-    # ...
+    newNum = 0
+    exponent = 0
+    digits = int(digits)
+    while digits > 0:
+        newNum += base1 ** exponent * (digits % base2)
+        digits //= base2
+        exponent += 1
+    return newNum
 
 
 def main():
