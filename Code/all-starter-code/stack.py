@@ -11,6 +11,7 @@ class LinkedStack(object):
         """Initialize this stack and push the given items, if any."""
         # Initialize a new linked list to store the items
         self.list = LinkedList()
+        self.head = None
         if iterable is not None:
             for item in iterable:
                 self.push(item)
@@ -21,11 +22,22 @@ class LinkedStack(object):
 
     def is_empty(self):
         """Return True if this stack is empty, or False otherwise."""
-        # TODO: Check if empty
+        if not self.list:
+            return True
+        else:
+            return False
 
     def length(self):
         """Return the number of items in this stack."""
-        # TODO: Count number of items
+        temp = self.head # Initialize temp as header node
+        count = 0 # Counter variable for list
+
+        # Loop while end of linked list is not reached
+        while (temp):
+            count += 1
+            temp = temp.next
+        return count
+
 
     def push(self, item):
         """Insert the given item on the top of this stack.
