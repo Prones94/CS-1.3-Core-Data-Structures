@@ -67,14 +67,15 @@ def encode(number, base):
     assert 2 <= base <= 36, 'base is out of range: {}'.format(base)
     # Handle unsigned numbers only for now
     assert number >= 0, 'number is negative: {}'.format(number)
-    # TODO: Encode number in binary (base 2)
-    # if base == 2:
-    #     return bin(number).replace("Ob", "")
-    # # TODO: Encode number in hexadecimal (base 16)
-    # elif base == 16:
-    #     return oct(number)
-    # # TODO: Encode number in any base (2 up to 36)
-    # else:
+    '''
+    digits = digits[::-1]
+    decimal_num = 0
+    for i in range(len(digits)):
+        digit = digits[i]
+        digit = int(digit)
+        decimal_num += digit * base ** 1
+    return decimal_num
+    '''
     new_num = ""
     while number > 0:
         temp = int(number%base)
