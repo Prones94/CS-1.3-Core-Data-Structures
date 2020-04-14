@@ -5,7 +5,12 @@ import string
 # string.ascii_lowercase is 'abcdefghijklmnopqrstuvwxyz'
 # string.ascii_uppercase is 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 # string.ascii_letters is ascii_lowercase + ascii_uppercase
-
+def cleaner(text):
+    clean = ''
+    for i in text:
+        if i in string.ascii_letters:
+            clean += i
+    return clean
 
 def is_palindrome(text):
     """A string of characters is a palindrome if it reads the same forwards and
@@ -19,14 +24,28 @@ def is_palindrome(text):
 
 def is_palindrome_iterative(text):
     # TODO: implement the is_palindrome function iteratively here
-    pass
+    word = cleaner(text).lower()
+    reverse = ''
+    for letter in word[::-1]:
+        reverse += letter
+    if reverse.lower()== word:
+        return True
+    else:
+        return False
     # once implemented, change is_palindrome to call is_palindrome_iterative
     # to verify that your iterative implementation passes all tests
 
 
 def is_palindrome_recursive(text, left=None, right=None):
     # TODO: implement the is_palindrome function recursively here
-    pass
+    clean = cleaner(text).lower()
+    if len(text) <= left:
+        return True
+    else:
+        if text[left] == text[right]:
+            return is_palindrome_recursive(text, left + 1; right - 1)
+        else:
+            return False
     # once implemented, change is_palindrome to call is_palindrome_recursive
     # to verify that your iterative implementation passes all tests
 
