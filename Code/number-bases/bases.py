@@ -59,6 +59,7 @@ def convert(digits, base1, base2):
     # ...
     # TODO: Convert digits from any base to any base (2 up to 36)
     # ...
+    pass
 
 
 def main():

@@ -67,7 +67,7 @@ class HashTable(object):
             item_count += bucket.length()
         return item_count
         # Equivalent to this list comprehension:
-        return sum(bucket.length() for bucket in self.buckets)
+        # return sum(bucket.length() for bucket in self.buckets)
 
     def contains(self, key):
         """Return True if this hash table contains the given key, or False.
